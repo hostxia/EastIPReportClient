@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace EastIPReportClient
 {
-    public partial class Form1 : Form
+    public partial class XFrmMain : Form
     {
-        public Form1()
+        public XFrmMain()
         {
             InitializeComponent();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            xgcResult.DataSource = new ReportHelper().GetReport(xspClientNo.Value.ToString("0000"));
+            xgvResult.BestFitColumns();
         }
     }
 }
